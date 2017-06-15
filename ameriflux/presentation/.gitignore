@@ -1,0 +1,12 @@
+/data.aux
+/data.log
+/data.nav
+/data.out
+/data.snm
+/data.synctex.gz
+/data.toc
+*.blg
+*.fdb_latexmk
+*.fls
+*.bcf
+*.run.xml

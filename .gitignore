@@ -1,0 +1,4 @@
+*.csv
+*.xlsx
+/upscaling.sublime-project
+/upscaling.sublime-workspace

@@ -6,13 +6,15 @@
 \usepackage[space]{grffile}
 \usepackage{multicol}
 
+
 \title{Exploring the Ameriflux Data}
 \subtitle{Trends and Relationships}
-\author{I. Markelov}
-\institute{Upscaling Workgroup Meeting}
+\author{Igor Markelov}
+\institute{Upscaling Group Meeting}
 \date{June 16, 2017}
 
 \graphicspath{ {../img/} }
+\beamertemplatenavigationsymbolsempty
 
 \begin{document}
 
@@ -292,13 +294,15 @@ WET - Permanent Wetlands.
 \end{frame}
 
 \begin{frame}
-\frametitle{Random Forest Algorithm}
+\setbeamerfont{footnote}{size=\tiny}
+\frametitle{Machine Learning Algorithm: Random Forests\footnotemark}
 \centering
-\includegraphics[width=0.9\textwidth]{random_forest.png}\\
+\includegraphics[width=0.8\textwidth]{random_forest.png}\\
+\footnotetext[1]{\textbf{Breiman, L.} \textit{Machine Learning (2001) 45:5.} doi:10.1023/A:1010933404324}
 \end{frame}
 
 \begin{frame}
-\frametitle{Random Forest Algorithm: Predicted vs Measured at Night}
+\frametitle{Random Forests Algorithm: Predicted vs Measured (Night)}
 \framesubtitle{Features: SWC, T, P, Lat, Long, Date}
 \begin{columns}[t]
 \column{.4\textwidth}
@@ -315,44 +319,38 @@ WET - Permanent Wetlands.
 \end{frame}
 
 \begin{frame}
-\frametitle{Random Forest Algorithm:}
+\frametitle{Random Forests Algorithm}
 \framesubtitle{Relative Importance of Features}
 \centering
 \includegraphics[width=0.9\textwidth]{importance.png}\\
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Random Forest Algorithm: Predicted vs Measured at Night}
-\framesubtitle{Features: SWC, T}
-\begin{columns}[t]
-\column{.4\textwidth}
-\centering
-% \includegraphics[width=\textwidth]{F_ML/all.png}\\
-\includegraphics[width=\textwidth]{F_ML_2/0.png}\\
-\includegraphics[width=\textwidth]{F_ML_2/1.png}
+% \begin{frame}
+% \frametitle{Random Forests Algorithm: Predicted vs Measured (Night)}
+% \framesubtitle{Features: SWC, T}
+% \begin{columns}[t]
+% \column{.4\textwidth}
+% \centering
+% % \includegraphics[width=\textwidth]{F_ML/all.png}\\
+% \includegraphics[width=\textwidth]{F_ML_2/0.png}\\
+% \includegraphics[width=\textwidth]{F_ML_2/1.png}
 
-\column{.4\textwidth}
-\centering
-\includegraphics[width=\textwidth]{F_ML_2/2.png}\\
-\includegraphics[width=\textwidth]{F_ML_2/3.png}
-\end{columns}
-\end{frame}
+% \column{.4\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{F_ML_2/2.png}\\
+% \includegraphics[width=\textwidth]{F_ML_2/3.png}
+% \end{columns}
+% \end{frame}
 
 % \begin{frame}
-% \frametitle{Random Forest Algorithm:}
+% \frametitle{Random Forests Algorithm:}
 % \framesubtitle{Relative Importance of Features}
 % \centering
 % \includegraphics[width=0.9\textwidth]{importance_2.png}\\
 % \end{frame}
 
 
-\begin{frame}
-\frametitle{Random Forest Algorithm: Train on all data (25 Sites)}
-\framesubtitle{Relative Importance of Features}
-\centering
-\includegraphics[width=0.9\textwidth]{importance_3.png}\\
-\end{frame}
 
 \begin{frame}
 \frametitle{Train on all data (25 Sites). Six Modeled Sites}
@@ -385,7 +383,7 @@ MF - mixed forest;
 \end{frame}
 
 \begin{frame}
-\frametitle{Random Forest Algorithm: Predicted vs Measured at Night}
+\frametitle{Random Forests Algorithm: Predicted vs Measured (Night)}
 \framesubtitle{Features: SWC, T; Train on all data}
 
 \begin{columns}[t]
@@ -405,12 +403,17 @@ MF - mixed forest;
 
 \end{frame}
 
-
+\begin{frame}
+\frametitle{Random Forests Algorithm: Train on all data (25 Sites)}
+\framesubtitle{Relative Importance of Features}
+\centering
+\includegraphics[width=0.9\textwidth]{importance_3.png}\\
+\end{frame}
 
 
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{T dependence}
 \centering
 \includegraphics[width=0.8\textwidth]{T_dependence.png}\\
@@ -418,12 +421,13 @@ MF - mixed forest;
 
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{T dependence}
 
 \begin{columns}[t]
 \tiny
 \column{.5\textwidth}
+\centering
 Modified Arrhenius equation for optimum T:
 \begin{equation}
     \frac{F}{F_{max}} = \frac{exp\left[\frac{-E_a}{RT_0}\left(1 - \frac{T_0}{T} \right)\right]}{1 + exp\left[ \frac{S T - H_d}{RT} \right]}
@@ -434,10 +438,10 @@ Modified Arrhenius equation for optimum T:
 \centering
 Fitting params:
 \begin{align}
-T_0 &= 284 \text{ K} \\
-E_a &= - 67.5 \text{ kJ/mol} \\
-S &= 543.6 \text{ J/mol/K} \\
-H_d &= 155.9 \text{ kJ/mol}
+T_0 &= 293.4 \text{ K} \\
+E_a &= - 22.1 \text{ kJ/mol} \\
+S &= 304.1 \text{ J/mol/K} \\
+H_d &= 90.6 \text{ kJ/mol}
 \end{align}
 
 
@@ -483,7 +487,7 @@ H_d &= 155.9 \text{ kJ/mol}
 
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{$\theta$ dependence}
 
 \centering
@@ -493,7 +497,7 @@ H_d &= 155.9 \text{ kJ/mol}
 
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{$\theta$ dependence}
 
 \centering
@@ -502,7 +506,7 @@ H_d &= 155.9 \text{ kJ/mol}
 \end{frame}
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{$\theta$ dependence}
 
 \centering
@@ -511,7 +515,7 @@ H_d &= 155.9 \text{ kJ/mol}
 \end{frame}
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{$\theta$ dependence}
 
 \centering
@@ -521,7 +525,7 @@ H_d &= 155.9 \text{ kJ/mol}
 
 
 \begin{frame}
-\frametitle{Reverse Engineering of Random Forest Tree Algorithm}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
 \framesubtitle{$\theta$ dependence}
 
 \begin{columns}[t]
@@ -559,7 +563,7 @@ Fitting params: \\
 
 \begin{equation}
 \label{eq:TO}
-    F = F_{max}\cdot f(T)\cdot f(\theta)
+    F = 0.75F_{max}\cdot f(T) + 0.25F_{max}\cdot f(\theta)
 \end{equation}
 
 \begin{columns}[t]
@@ -578,6 +582,7 @@ Fitting params: \\
 \end{columns}
 
 \end{frame}
+
 
 
 
