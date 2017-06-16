@@ -23,13 +23,6 @@
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Sites}
-\begin{figure}
-\includegraphics[width=\textwidth]{sites.png}
-\end{figure}
-\end{frame}
-
 
 \begin{frame}
 \frametitle{Sites}
@@ -66,6 +59,16 @@ WET - Permanent Wetlands.
 
 
 \begin{frame}
+\frametitle{Sites}
+\begin{figure}
+\includegraphics[width=\textwidth]{sites.png}
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
 \frametitle{Flux in Time}
 
 \begin{columns}[t]
@@ -86,25 +89,25 @@ WET - Permanent Wetlands.
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Density of Measurements}
+% \begin{frame}
+% \frametitle{Density of Measurements}
 
-\begin{columns}[t]
-\column{.35\textwidth}
-\centering
-\includegraphics[width=\textwidth]{FvsTimeDen/all.png}\\
-\includegraphics[width=\textwidth]{FvsTimeDen/CA-NS1.png}
-\column{.35\textwidth}
-\centering
-\includegraphics[width=\textwidth]{FvsTimeDen/CA-NS6.png}\\
-\includegraphics[width=\textwidth]{FvsTimeDen/CA-Oas.png}
-\column{.35\textwidth}
-\centering
-\includegraphics[width=\textwidth]{FvsTimeDen/US-FPe.png}\\
-\includegraphics[width=\textwidth]{FvsTimeDen/US-Los.png}
-\end{columns}
+% \begin{columns}[t]
+% \column{.35\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{FvsTimeDen/all.png}\\
+% \includegraphics[width=\textwidth]{FvsTimeDen/CA-NS1.png}
+% \column{.35\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{FvsTimeDen/CA-NS6.png}\\
+% \includegraphics[width=\textwidth]{FvsTimeDen/CA-Oas.png}
+% \column{.35\textwidth}
+% \centering
+% \includegraphics[width=\textwidth]{FvsTimeDen/US-FPe.png}\\
+% \includegraphics[width=\textwidth]{FvsTimeDen/US-Los.png}
+% \end{columns}
 
-\end{frame}
+% \end{frame}
 
 \begin{frame}
 \frametitle{Flux vs Soil Temperature}
@@ -206,11 +209,11 @@ WET - Permanent Wetlands.
 
 % \end{frame}
 
-\begin{frame}
-\frametitle{Weekly average plots}
-\centering
-\includegraphics[width=0.9\textwidth]{FvsW_mean/all.png}\\
-\end{frame}
+% \begin{frame}
+% \frametitle{Weekly average plots}
+% \centering
+% \includegraphics[width=0.9\textwidth]{FvsW_mean/all.png}\\
+% \end{frame}
 
 \begin{frame}
 \frametitle{Weekly average: Day/Night}
@@ -295,10 +298,24 @@ WET - Permanent Wetlands.
 
 \begin{frame}
 \setbeamerfont{footnote}{size=\tiny}
-\frametitle{Machine Learning Algorithm: Random Forests\footnotemark}
+\frametitle{Machine Learning: Random Forests\footnotemark}
 \centering
 \includegraphics[width=0.8\textwidth]{random_forest.png}\\
-\footnotetext[1]{\textbf{Breiman, L.} \textit{Machine Learning (2001) 45:5.} doi:10.1023/A:1010933404324}
+\footnotetext[1]{\textbf{Breiman, L.} \textit{Machine Learning (2001) 45:5.} doi:10.1023/A:1010933404324.}
+\end{frame}
+
+
+\begin{frame}
+\setbeamerfont{footnote}{size=\tiny}
+\frametitle{Machine Learning: Random Forests}
+\centering
+\includegraphics[width=0.9\textwidth]{rf.jpeg}\\
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Random Forests Algorithm: Predicted vs Measured (Night)}
+\framesubtitle{Features: SWC, T, P, Lat, Long, Date}
 \end{frame}
 
 \begin{frame}
@@ -318,11 +335,13 @@ WET - Permanent Wetlands.
 \end{columns}
 \end{frame}
 
+
+
 \begin{frame}
 \frametitle{Random Forests Algorithm}
 \framesubtitle{Relative Importance of Features}
 \centering
-\includegraphics[width=0.9\textwidth]{importance.png}\\
+\includegraphics[width=0.85\textwidth]{importance.png}\\
 \end{frame}
 
 
@@ -411,10 +430,22 @@ MF - mixed forest;
 \end{frame}
 
 
+\begin{frame}
+\frametitle{Reverse Engineering of Random Forests Algorithm}
+% \framesubtitle{T dependence (Night)}
+\centering
+T = [-10; +30] with $\Delta$T = 0.001
+
+$\theta$ = [0; 1] with $\Delta \theta$ =  0.001
+
+10$^6$ combinations
+% \includegraphics[width=0.8\textwidth]{T_dependence.png}\\
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{T dependence}
+\framesubtitle{T dependence (Night)}
 \centering
 \includegraphics[width=0.8\textwidth]{T_dependence.png}\\
 \end{frame}
@@ -422,7 +453,7 @@ MF - mixed forest;
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{T dependence}
+\framesubtitle{T dependence (Night)}
 
 \begin{columns}[t]
 \tiny
@@ -488,7 +519,7 @@ H_d &= 90.6 \text{ kJ/mol}
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{$\theta$ dependence}
+\framesubtitle{$\theta$ dependence (Night)}
 
 \centering
 \includegraphics[width=0.8\textwidth]{Theta_dependence_30.png}
@@ -498,7 +529,7 @@ H_d &= 90.6 \text{ kJ/mol}
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{$\theta$ dependence}
+\framesubtitle{$\theta$ dependence (Night)}
 
 \centering
 \includegraphics[width=0.8\textwidth]{Theta_dependence_20.png}
@@ -507,7 +538,7 @@ H_d &= 90.6 \text{ kJ/mol}
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{$\theta$ dependence}
+\framesubtitle{$\theta$ dependence (Night)}
 
 \centering
 \includegraphics[width=0.8\textwidth]{Theta_dependence_10.png}
@@ -516,7 +547,7 @@ H_d &= 90.6 \text{ kJ/mol}
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{$\theta$ dependence}
+\framesubtitle{$\theta$ dependence (Night)}
 
 \centering
 \includegraphics[width=0.8\textwidth]{Theta_dependence_0.png}
@@ -526,7 +557,7 @@ H_d &= 90.6 \text{ kJ/mol}
 
 \begin{frame}
 \frametitle{Reverse Engineering of Random Forests Algorithm}
-\framesubtitle{$\theta$ dependence}
+\framesubtitle{$\theta$ dependence (Night)}
 
 \begin{columns}[t]
 \tiny
