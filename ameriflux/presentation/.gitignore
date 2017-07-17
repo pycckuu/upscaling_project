@@ -10,3 +10,10 @@
 *.fls
 *.bcf
 *.run.xml
+*.toc
+*.synctex.gz
+*.snm
+*.out
+*.nav
+*.log
+*.aux

@@ -125,7 +125,7 @@ class DataContainer:
         df = df.drop('REFERENCE_PAPER', 1, errors='ignore')
         df = df.drop('REFERENCE_USAGE', 1, errors='ignore')
         df['site'] = f[9:15]
-        return df[['LOCATION_LAT', 'LOCATION_LONG', 'site']]
+        return df[['LOCATION_LAT', 'LOCATION_LONG', 'site', 'IGBP', 'CLIMATE_KOEPPEN']]
 
     def merge_2_df(self, df1, df2):
         for c in df2.columns:
