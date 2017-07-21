@@ -17,7 +17,7 @@ def linear_fit(df, y, x='num'):
 
     Args:
         df (pd.dataframe): dataframe with data
-        y (string): which column analyze?
+        y (string): which column to analyze?
 
     Returns:
         sm.ols: statistical linear model
